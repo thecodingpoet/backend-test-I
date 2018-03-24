@@ -19,27 +19,29 @@ Target accounts using either of these criteria:
 
 The bot is suppose to maintain a session and continously listen to the predefined hashtag
 
-## How to complete the task
+## Development language
+Ruby 2.4.0
 
-1. Fork this repository into your own public repo.
+## Getting started
+- You need to set up the following to run the application successfully
 
-2. Complete the project and commit your work. Make a screencast of how it works with the googlespread sheet and progam side-by-side. Please watch this sample video to see what your screencast should look like https://youtu.be/mwBqUUtBtlE
+## Twitter Setup
+- Go to https://apps.twitter.com, click on Create New App Button
+- Fill out the form correctly, click Create your Twitter Application
+- Replace the consumer key, consumer secret, access token and access token secret values with the ones you generate.
 
-3. Send the URL of your own repository and the screencast to @kolawole.balogun on the Slack here bit.ly/dcs-slack.
+## Google Spreadsheet Setup
+- Go to Google API console https://console.cloud.google.com/apis/
+- Create a new project
+- Click Enable API. Search for and enable the Google Drive API.
+- Create credentials for a service account to access Application data.
+- Obtain OAuth2 credentials from Google Developers Console for google spreadsheet api and drive api
+- Save the file as google_sheets.json in same directory as project.
 
-## Show your working
-
-If you choose to use build tools to compile your CSS and Javascript (such as SASS of Coffescript) please include the original files as well. You may update this README file outlining the details of what tools you have used.
-
-## Clean code
-
-This fictitious project is part of a larger plan to reuse templates for multiple properties. When authoring your CSS ensure that it is easy for another developer to find and change things such as fonts and colours.
-
-
-## Good luck!
-
-We look forward to seeing what you can do. Remember, although it is a test, there are no specific right or wrong answers that we are looking for - just do the job as best you can. Any questions - create an issue in the panel on the right (requires a Github account).
+## Run the App
+- Install dependencies bundle install
+- To run the app: ruby bot.rb
 
 
-## Demo
-![screen shot](https://user-images.githubusercontent.com/8668661/33088863-330b4250-ceef-11e7-9e9c-b4fd9ca299d8.gif)
+## Live Demo
+Here is a link to the demo of the app - https://www.youtube.com/watch?v=RRcidPDHjcQ&feature=youtu.be
