@@ -1,4 +1,3 @@
-# require 'rubygems'
 require 'twitter'
 require 'dotenv'
 require_relative 'sheets'
@@ -10,7 +9,7 @@ class TwitterBot
         sheets ||= GoogleSheets.new
         client.filter(track: tags.join(",")) do |object|
             return false unless object.is_a?(Twitter::Tweet)
-            sheets.add(object.user.name, object.user.followers_count)
+            sheets.add(object.user.name, object.user.followers_count) if object.user.followers_count > 1000
             puts "Profile Name: #{object.user.name}"
             puts "UserName: #{object.user.screen_name}"
             puts "Followers: #{object.user.followers_count}"
@@ -44,5 +43,4 @@ puts "[+] Enter each hashtag seperated by a comma or space:"
 tags = gets.chomp.split(/[\s,]+/)
 puts "[-] Filter streams based on the following hashtags: #{tags}"
 puts "----------------------------------------------------------------------------------"
-puts TwitterBot.new.get_tweets(tags)
-
+TwitterBot.new.get_tweets(tags)
